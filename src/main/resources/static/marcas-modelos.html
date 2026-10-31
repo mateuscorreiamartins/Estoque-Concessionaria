@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerir Marcas e Modelos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="panel-card">
+    <div class="panel-header" style="display: flex; justify-content: space-between; align-items: center;">
+        <div>
+            <h1>Gestão de Marcas e Modelos</h1>
+            <p>Cadastre marcas e modelos para ficarem disponíveis ao adicionar veículos.</p>
+        </div>
+        <a href="index.html" class="btn-danger-action" style="background-color: #64748b;">Voltar ao Painel</a>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 20px;">
+
+        <!-- COLUNA MARCAS -->
+        <div>
+            <h2 class="section-title">Cadastrar Marca</h2>
+            <form id="formMarca" onsubmit="salvarMarca(event)" style="margin-bottom: 24px;">
+                <div class="form-group" style="margin-bottom: 12px;">
+                    <label>Nome da Marca *</label>
+                    <input type="text" id="marcaNome" class="form-control" placeholder="Ex: Honda, BMW" required>
+                </div>
+                <div class="form-group" style="margin-bottom: 16px;">
+                    <label>País de Origem</label>
+                    <input type="text" id="marcaPais" class="form-control" placeholder="Ex: Japão, Alemanha">
+                </div>
+                <button type="submit" class="btn-action" style="width: 100%;">Cadastrar Marca</button>
+            </form>
+
+            <h3 style="font-size: 1rem; margin-bottom: 10px;">Marcas Existentes</h3>
+            <table class="custom-table">
+                <thead>
+                <tr>
+                    <th>Marca</th>
+                    <th>Origem</th>
+                    <th>Ação</th>
+                </tr>
+                </thead>
+                <tbody id="tabelaMarcas"></tbody>
+            </table>
+        </div>
+
+        <!-- COLUNA MODELOS -->
+        <div>
+            <h2 class="section-title">Cadastrar Modelo</h2>
+            <form id="formModelo" onsubmit="salvarModelo(event)" style="margin-bottom: 24px;">
+                <div class="form-group" style="margin-bottom: 12px;">
+                    <label>Marca Pertencente *</label>
+                    <select id="modeloMarcaSelect" class="form-select" required></select>
+                </div>
+                <div class="form-group" style="margin-bottom: 12px;">
+                    <label>Nome do Modelo *</label>
+                    <input type="text" id="modeloNome" class="form-control" placeholder="Ex: Civic, Mustang" required>
+                </div>
+                <div class="form-group" style="margin-bottom: 16px;">
+                    <label>Categoria</label>
+                    <input type="text" id="modeloCategoria" class="form-control" placeholder="Ex: Sedan, SUV">
+                </div>
+                <button type="submit" class="btn-action" style="width: 100%;">Cadastrar Modelo</button>
+            </form>
+
+            <h3 style="font-size: 1rem; margin-bottom: 10px;">Modelos Existentes</h3>
+            <table class="custom-table">
+                <thead>
+                <tr>
+                    <th>Modelo</th>
+                    <th>Categoria</th>
+                    <th>Marca</th>
+                    <th>Ação</th>
+                </tr>
+                </thead>
+                <tbody id="tabelaModelos"></tbody>
+            </table>
+        </div>
+
+    </div>
+</div>
+
+<script src="script.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        carregarMarcasEModelosPagina();
+    });
+</script>
+</body>
+</html>

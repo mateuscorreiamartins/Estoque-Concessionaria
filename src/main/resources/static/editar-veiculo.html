@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Veículo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="panel-card" style="max-width: 800px;">
+    <div class="panel-header">
+        <h1 id="tituloEdicao">Editar Veículo</h1>
+        <p>Atualize as informações do veículo no estoque.</p>
+    </div>
+
+    <form id="formEditarVeiculo" onsubmit="salvarEdicaoVeiculo(event)">
+        <input type="hidden" id="carroId">
+
+        <div class="form-grid">
+
+            <div class="form-group">
+                <label>Marca *</label>
+                <select id="carroMarca" class="form-select" required onchange="aoSelecionarMarca()"></select>
+            </div>
+
+            <div class="form-group">
+                <label>Modelo *</label>
+                <select id="carroModelo" class="form-select" required></select>
+            </div>
+
+            <div class="form-group">
+                <label>Ano de Fabricação *</label>
+                <input type="number" id="carroAno" class="form-control" required>
+            </div>
+
+            <div class="form-group">
+                <label>Cor *</label>
+                <input type="text" id="carroCor" class="form-control" required>
+            </div>
+
+            <div class="form-group">
+                <label>Preço de Venda (R$) *</label>
+                <input type="number" step="0.01" id="carroPreco" class="form-control" required>
+            </div>
+
+            <div class="form-group">
+                <label>Quilometragem (KM) *</label>
+                <input type="number" step="0.1" id="carroKm" class="form-control" required>
+            </div>
+
+            <div class="form-group">
+                <label>Status *</label>
+                <select id="carroStatus" class="form-select" required>
+                    <option value="DISPONIVEL">DISPONÍVEL</option>
+                    <option value="RESERVADO">RESERVADO</option>
+                    <option value="VENDIDO">VENDIDO</option>
+                    <option value="DESCONTINUADO">DESCONTINUADO</option>
+                </select>
+            </div>
+
+        </div>
+
+        <div style="display: flex; gap: 12px; margin-top: 20px;">
+            <button type="submit" class="btn-action">Salvar Alterações</button>
+            <a href="index.html" class="btn-danger-action" style="background-color: #64748b;">Voltar</a>
+        </div>
+    </form>
+</div>
+
+<script src="script.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', carregarDadosEdicaoVeiculo);
+</script>
+</body>
+</html>

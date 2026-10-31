@@ -33,6 +33,15 @@ public class CarroService {
 
     // Eliminar um carro pelo ID
     public void deletar(Long id) {
+        Carro carro = carroRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Veículo não encontrado com o ID: " + id));
+
+        // Apenas VENDIDO ou DESCONTINUADO podem ser removidos
+        if (carro.getStatus() == StatusVeiculo.DISPONIVEL || carro.getStatus() == StatusVeiculo.RESERVADO) {
+            throw new IllegalStateException("Não é permitido remover veículos com status " + carro.getStatus() +
+                    ". Altere o status para VENDIDO ou DESCONTINUADO antes de excluir.");
+        }
+
         carroRepository.deleteById(id);
     }
 

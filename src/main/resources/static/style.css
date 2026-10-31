@@ -1,190 +1,211 @@
-@import url('[suspicious link removed]');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
 
-:root {
-    --bg-body: #f8fafc;
-    --primary-color: #1e293b;
-    --accent-blue: #2563eb;
-    --accent-hover: #1d4ed8;
-    --card-bg: #ffffff;
-    --text-main: #0f172a;
-    --text-muted: #64748b;
-    --border-color: #e2e8f0;
-    --radius-lg: 14px;
-    --radius-sm: 8px;
-    --shadow-soft: 0 4px 20px -2px rgba(15, 23, 42, 0.06);
-    --shadow-hover: 0 10px 25px -5px rgba(15, 23, 42, 0.1);
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 body {
-    background-color: var(--bg-body) !important;
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !important;
-    color: var(--text-main);
-    letter-spacing: -0.01em;
+    background-color: #f2f4f8;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    color: #1e293b;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 40px 20px;
 }
 
-/* Navbar */
-.navbar {
-    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%) !important;
-    padding: 1rem 0;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+/* CARTÃO CENTRAL (CONTAINER) DA IMAGEM EXEMPLO.PNG */
+.panel-card {
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
+    border: 1px solid #e2e8f0;
+    width: 100%;
+    max-width: 1050px;
+    padding: 35px 40px;
 }
 
-.navbar-brand {
-    font-weight: 700 !important;
-    letter-spacing: -0.02em;
-    font-size: 1.25rem;
+/* TITULO E SUBTITULO */
+.panel-header h1 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 4px;
 }
 
-/* Card Principal e Formulários */
-.card {
-    background-color: var(--card-bg);
-    border: 1px solid var(--border-color) !important;
-    border-radius: var(--radius-lg) !important;
-    box-shadow: var(--shadow-soft) !important;
-    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+.panel-header p {
+    font-size: 0.9rem;
+    color: #64748b;
+    margin-bottom: 24px;
 }
 
-.card:hover {
-    box-shadow: var(--shadow-hover) !important;
+.user-role {
+    font-weight: 700;
+    color: #0f172a;
 }
 
-.card-header {
-    background-color: transparent !important;
-    border-bottom: 1px solid var(--border-color) !important;
-    padding: 1.25rem 1.5rem !important;
+/* BARRA DE BOTÕES DE AÇÃO HORIZONTAIS */
+.action-bar {
+    display: flex;
+    gap: 14px;
+    margin-bottom: 32px;
+    flex-wrap: wrap;
+}
+
+.btn-action {
+    flex: 1;
+    min-width: 180px;
+    background-color: #38bdf8;
+    color: #ffffff;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 6px;
+    font-size: 0.9rem;
     font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.card-header.bg-primary {
-    background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%) !important;
-    border-bottom: none !important;
+.btn-action:hover {
+    background-color: #0284c7;
+    color: #ffffff;
 }
 
-.card-header.bg-dark {
-    background: #0f172a !important;
+.btn-danger-action {
+    background-color: #ef4444;
+    color: #ffffff;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
 }
 
-.card-body {
-    padding: 1.5rem !important;
+.btn-danger-action:hover {
+    background-color: #dc2626;
+    color: #ffffff;
 }
 
-/* Labels e Campos */
-.form-label {
-    font-size: 0.825rem;
+/* SECÇÕES E TABELAS */
+.section-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 16px;
+}
+
+.custom-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 8px;
+}
+
+.custom-table th {
+    background-color: #f8fafc;
+    color: #64748b;
+    font-size: 0.8rem;
+    font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    color: var(--text-muted);
-    font-weight: 600 !important;
-    margin-bottom: 0.4rem;
+    padding: 14px 16px;
+    text-align: left;
+    border-bottom: 2px solid #e2e8f0;
 }
 
-.form-control, .form-select {
-    border-radius: var(--radius-sm) !important;
-    border: 1px solid var(--border-color) !important;
-    padding: 0.6rem 0.85rem !important;
-    font-size: 0.95rem;
-    color: var(--text-main);
-    background-color: #fdfdfd;
-    transition: all 0.2s ease;
-}
-
-.form-control:focus, .form-select:focus {
-    border-color: var(--accent-blue) !important;
-    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15) !important;
-    background-color: #ffffff;
-}
-
-.form-text {
-    font-size: 0.75rem;
-    color: #94a3b8;
-    margin-top: 0.3rem;
-}
-
-/* Botões */
-.btn {
-    border-radius: var(--radius-sm) !important;
-    padding: 0.6rem 1.2rem !important;
-    font-weight: 600 !important;
+.custom-table td {
+    padding: 14px 16px;
     font-size: 0.9rem;
-    transition: all 0.2s ease !important;
-}
-
-.btn-success {
-    background-color: #10b981 !important;
-    border-color: #10b981 !important;
-}
-
-.btn-success:hover {
-    background-color: #059669 !important;
-    transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.25);
-}
-
-.btn-outline-danger {
-    color: #ef4444 !important;
-    border-color: #fca5a5 !important;
-    border-radius: 6px !important;
-    padding: 0.35rem 0.75rem !important;
-}
-
-.btn-outline-danger:hover {
-    background-color: #ef4444 !important;
-    color: #ffffff !important;
-    border-color: #ef4444 !important;
-}
-
-/* Tabela */
-.table {
-    margin-bottom: 0 !important;
-}
-
-.table thead th {
-    background-color: #f1f5f9 !important;
-    color: #475569 !important;
-    font-size: 0.75rem;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    font-weight: 700;
-    padding: 1rem 1.25rem !important;
-    border-bottom: 1px solid var(--border-color) !important;
-}
-
-.table tbody td {
-    padding: 1rem 1.25rem !important;
-    font-size: 0.925rem;
-    border-bottom: 1px solid #f1f5f9 !important;
+    color: #334155;
+    border-bottom: 1px solid #f1f5f9;
     vertical-align: middle;
 }
 
-.table-hover tbody tr:hover {
-    background-color: #f8fafc !important;
+.custom-table tr:hover {
+    background-color: #f8fafc;
 }
 
-/* Badges de Status */
+/* FORMULÁRIOS DAS PÁGINAS DEDICADAS */
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 18px;
+    margin-bottom: 24px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #475569;
+    margin-bottom: 6px;
+}
+
+.form-control, .form-select {
+    padding: 10px 14px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    outline: none;
+    transition: border-color 0.2s;
+    background-color: #ffffff;
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: #38bdf8;
+    box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.2);
+}
+
+/* BADGES DE STATUS */
 .badge {
-    padding: 0.45em 0.85em !important;
-    font-size: 0.75rem !important;
-    font-weight: 600 !important;
-    border-radius: 50px !important;
-    letter-spacing: 0.03em;
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 700;
 }
+.badge-disponivel { background: #d1fae5; color: #065f46; }
+.badge-reservado { background: #fef3c7; color: #92400e; }
+.badge-vendido { background: #fee2e2; color: #991b1b; }
+.badge-descontinuado { background: #f1f5f9; color: #475569; }
 
-.badge-disponivel {
-    background-color: #d1fae5 !important;
-    color: #065f46 !important;
+/* BOTÕES PEQUENOS DE TABELA */
+.btn-sm-edit {
+    background: #e0f2fe;
+    color: #0369a1;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 0.8rem;
+    cursor: pointer;
+    text-decoration: none;
+    margin-right: 6px;
 }
+.btn-sm-edit:hover { background: #bae6fd; }
 
-.badge-reservado {
-    background-color: #fef3c7 !important;
-    color: #92400e !important;
+.btn-sm-delete {
+    background: #fee2e2;
+    color: #991b1b;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 0.8rem;
+    cursor: pointer;
 }
-
-.badge-vendido {
-    background-color: #fee2e2 !important;
-    color: #991b1b !important;
-}
-
-.badge-descontinuado {
-    background-color: #f1f5f9 !important;
-    color: #475569 !important;
-}
+.btn-sm-delete:hover { background: #fecaca; }

@@ -63,11 +63,15 @@ public class CarroController {
 
     // 5. Eliminar um carro do estoque
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deletar(@PathVariable Long id) {
-        if (carroService.buscarPorId(id).isPresent()) {
+    public ResponseEntity<?> deletar(@PathVariable Long id) {
+        try {
             carroService.deletar(id);
             return ResponseEntity.noContent().build();
+        } catch (IllegalStateException e) {
+            // Retorna HTTP 400 Bad Request com a regra de negócio violada
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
+        } catch (RuntimeException e) {
+            return ResponseEntity.notFound().build();
         }
-        return ResponseEntity.notFound().build();
     }
 }

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestão de Estoque de Veículos</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="[suspicious link removed]" rel="stylesheet">
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-light">
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4 shadow-sm">
+    <div class="container">
+        <a class="navbar-brand fw-bold" href="#">🚗 Gestão de Estoque de Veículos</a>
+        <span class="navbar-text text-light small">Sistema de Concessionária</span>
+    </div>
+</nav>
+
+<div class="container pb-5">
+
+    <!-- Formulário para Cadastrar Novo Veículo -->
+    <div class="card shadow-sm mb-4 border-0">
+        <div class="card-header bg-primary text-white fw-bold">
+            ➕ Cadastrar Novo Veículo no Estoque
+        </div>
+        <div class="card-body">
+            <form id="formVeiculo" onsubmit="salvarVeiculo(event)">
+                <div class="row g-3">
+                    <div class="col-md-2">
+                        <label class="form-label fw-bold">ID da Marca</label>
+                        <input type="number" id="marcaId" class="form-control" placeholder="Ex: 1" required>
+                        <div class="form-text">1=Toyota, 2=VW, 3=Chevrolet</div>
+                    </div>
+                    <div class="col-md-2">
+                        <label class="form-label fw-bold">ID do Modelo</label>
+                        <input type="number" id="modeloId" class="form-control" placeholder="Ex: 1" required>
+                        <div class="form-text">1=Corolla, 2=Golf, 3=Onix</div>
+                    </div>
+                    <div class="col-md-2">
+                        <label class="form-label fw-bold">Ano</label>
+                        <input type="number" id="anoFabricacao" class="form-control" placeholder="Ex: 2024" required>
+                    </div>
+                    <div class="col-md-2">
+                        <label class="form-label fw-bold">Cor</label>
+                        <input type="text" id="cor" class="form-control" placeholder="Ex: Azul" required>
+                    </div>
+                    <div class="col-md-2">
+                        <label class="form-label fw-bold">Preço (R$)</label>
+                        <input type="number" step="0.01" id="precoVenda" class="form-control" placeholder="Ex: 120000" required>
+                    </div>
+                    <div class="col-md-2">
+                        <label class="form-label fw-bold">KM</label>
+                        <input type="number" id="quilometragem" class="form-control" placeholder="Ex: 15000" required>
+                    </div>
+                    <div class="col-md-3">
+                        <label class="form-label fw-bold">Status</label>
+                        <select id="status" class="form-select" required>
+                            <option value="DISPONIVEL">DISPONIVEL</option>
+                            <option value="RESERVADO">RESERVADO</option>
+                            <option value="VENDIDO">VENDIDO</option>
+                            <option value="DESCONTINUADO">DESCONTINUADO</option>
+                        </select>
+                    </div>
+                    <div class="col-md-3 d-flex align-items-end">
+                        <button type="submit" class="btn btn-success w-100 fw-bold">Guardar Veículo</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Lista de Veículos em Estoque -->
+    <div class="card shadow-sm border-0">
+        <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center">
+            <span class="fw-bold">📋 Veículos Cadastrados no Estoque</span>
+            <button class="btn btn-sm btn-outline-light" onclick="carregarVeiculos()">🔄 Atualizar Lista</button>
+        </div>
+        <div class="card-body p-0">
+            <div class="table-responsive">
+                <table class="table table-hover table-striped mb-0 align-middle">
+                    <thead class="table-light">
+                    <tr>
+                        <th>ID</th>
+                        <th>Marca</th>
+                        <th>Modelo</th>
+                        <th>Ano</th>
+                        <th>Cor</th>
+                        <th>Preço</th>
+                        <th>KM</th>
+                        <th>Status</th>
+                        <th>Ações</th>
+                    </tr>
+                    </thead>
+                    <tbody id="tabelaVeiculos">
+                    <tr>
+                        <td colspan="9" class="text-center py-3 text-muted">A carregar veículos...</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- JavaScript Externo -->
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,190 @@
+@import url('[suspicious link removed]');
+
+:root {
+    --bg-body: #f8fafc;
+    --primary-color: #1e293b;
+    --accent-blue: #2563eb;
+    --accent-hover: #1d4ed8;
+    --card-bg: #ffffff;
+    --text-main: #0f172a;
+    --text-muted: #64748b;
+    --border-color: #e2e8f0;
+    --radius-lg: 14px;
+    --radius-sm: 8px;
+    --shadow-soft: 0 4px 20px -2px rgba(15, 23, 42, 0.06);
+    --shadow-hover: 0 10px 25px -5px rgba(15, 23, 42, 0.1);
+}
+
+body {
+    background-color: var(--bg-body) !important;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !important;
+    color: var(--text-main);
+    letter-spacing: -0.01em;
+}
+
+/* Navbar */
+.navbar {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%) !important;
+    padding: 1rem 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+    font-weight: 700 !important;
+    letter-spacing: -0.02em;
+    font-size: 1.25rem;
+}
+
+/* Card Principal e Formulários */
+.card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color) !important;
+    border-radius: var(--radius-lg) !important;
+    box-shadow: var(--shadow-soft) !important;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card:hover {
+    box-shadow: var(--shadow-hover) !important;
+}
+
+.card-header {
+    background-color: transparent !important;
+    border-bottom: 1px solid var(--border-color) !important;
+    padding: 1.25rem 1.5rem !important;
+    font-weight: 600;
+}
+
+.card-header.bg-primary {
+    background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%) !important;
+    border-bottom: none !important;
+}
+
+.card-header.bg-dark {
+    background: #0f172a !important;
+}
+
+.card-body {
+    padding: 1.5rem !important;
+}
+
+/* Labels e Campos */
+.form-label {
+    font-size: 0.825rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-muted);
+    font-weight: 600 !important;
+    margin-bottom: 0.4rem;
+}
+
+.form-control, .form-select {
+    border-radius: var(--radius-sm) !important;
+    border: 1px solid var(--border-color) !important;
+    padding: 0.6rem 0.85rem !important;
+    font-size: 0.95rem;
+    color: var(--text-main);
+    background-color: #fdfdfd;
+    transition: all 0.2s ease;
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: var(--accent-blue) !important;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15) !important;
+    background-color: #ffffff;
+}
+
+.form-text {
+    font-size: 0.75rem;
+    color: #94a3b8;
+    margin-top: 0.3rem;
+}
+
+/* Botões */
+.btn {
+    border-radius: var(--radius-sm) !important;
+    padding: 0.6rem 1.2rem !important;
+    font-weight: 600 !important;
+    font-size: 0.9rem;
+    transition: all 0.2s ease !important;
+}
+
+.btn-success {
+    background-color: #10b981 !important;
+    border-color: #10b981 !important;
+}
+
+.btn-success:hover {
+    background-color: #059669 !important;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.25);
+}
+
+.btn-outline-danger {
+    color: #ef4444 !important;
+    border-color: #fca5a5 !important;
+    border-radius: 6px !important;
+    padding: 0.35rem 0.75rem !important;
+}
+
+.btn-outline-danger:hover {
+    background-color: #ef4444 !important;
+    color: #ffffff !important;
+    border-color: #ef4444 !important;
+}
+
+/* Tabela */
+.table {
+    margin-bottom: 0 !important;
+}
+
+.table thead th {
+    background-color: #f1f5f9 !important;
+    color: #475569 !important;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: 700;
+    padding: 1rem 1.25rem !important;
+    border-bottom: 1px solid var(--border-color) !important;
+}
+
+.table tbody td {
+    padding: 1rem 1.25rem !important;
+    font-size: 0.925rem;
+    border-bottom: 1px solid #f1f5f9 !important;
+    vertical-align: middle;
+}
+
+.table-hover tbody tr:hover {
+    background-color: #f8fafc !important;
+}
+
+/* Badges de Status */
+.badge {
+    padding: 0.45em 0.85em !important;
+    font-size: 0.75rem !important;
+    font-weight: 600 !important;
+    border-radius: 50px !important;
+    letter-spacing: 0.03em;
+}
+
+.badge-disponivel {
+    background-color: #d1fae5 !important;
+    color: #065f46 !important;
+}
+
+.badge-reservado {
+    background-color: #fef3c7 !important;
+    color: #92400e !important;
+}
+
+.badge-vendido {
+    background-color: #fee2e2 !important;
+    color: #991b1b !important;
+}
+
+.badge-descontinuado {
+    background-color: #f1f5f9 !important;
+    color: #475569 !important;
+}

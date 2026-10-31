@@ -65,17 +65,26 @@ A API disponibiliza os seguintes pontos de acesso principais:
 
 ### Passo a Passo
 
-1. **Clonar o Repositório**
+**Clonar o Repositório**
    ```bash
    git clone [suspicious link removed]
    cd NOME-DO-REPOSITORIO
 Configurar o Banco de Dados MySQL Certifique-se de ajustar as credenciais no ficheiro src/main/resources/application.properties se a sua senha do MySQL for diferente:
+
 spring.datasource.url=jdbc:mysql://localhost:3306/db_estoque_veiculos?createDatabaseIfNotExist=true&serverTimezone=UTC&useSSL=false
+
 spring.datasource.username=root
+
 spring.datasource.password=sua_senha
+
 Executar a Aplicação
+
 Abra o projeto no IntelliJ IDEA.
+
 Execute a classe principal com.gestaoestoque.veiculos.VeiculosApplication.
+
 Acessar o Sistema
+
 Interface Web (Frontend): Abra o navegador em http://localhost:8080/
-Documentação Swagger UI: Aceda a http://localhost:8080/swagger-ui.html
+
+Documentação Swagger UI: http://localhost:8080/swagger-ui.html
